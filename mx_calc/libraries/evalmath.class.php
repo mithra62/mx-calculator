@@ -327,7 +327,8 @@ class EvalMath
                 }
 
                 // Did we just close a function?
-                if (1 === preg_match('/^('.self::$name_pattern.')\($/', $stack->last(2), $matches)) {
+                $param = $stack->last(2) ?? '';
+                if (1 === preg_match('/^('.self::$name_pattern.')\($/', $param, $matches)) {
                     // Get the function name.
                     $function_name = $matches[1];
                     // See how many arguments there were (cleverly stored on the stack, thank you).
