@@ -963,7 +963,7 @@ class EvalMath_Functions
     {
         $args = func_get_args();
 
-        return  call_user_func_array(array('self', 'sum'), $args) / count($args);
+        return  call_user_func_array(array(self::class, 'sum'), $args) / count($args);
     }
 
     /**
